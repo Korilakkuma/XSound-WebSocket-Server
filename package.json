@@ -1,0 +1,66 @@
+{
+  "name": "xsound-websocket-server",
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=12.0.0 <=16.16.x"
+  },
+  "description": "WebSocket Server for XSound",
+  "main": "app/index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "fix": "eslint --fix src",
+    "type": "tsc --noEmit",
+    "build": "NODE_ENV=production webpack --progress --mode production",
+    "start": "node app/index.js",
+    "dev": "webpack --progress && npm start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix",
+      "tsc --noEmit"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Korilakkuma/XSound-WebSocket-Server.git"
+  },
+  "keywords": [
+    "XSound",
+    "JavaScript",
+    "Web Audio API",
+    "Web Audio",
+    "Web Audio API Library",
+    "Web Audio Library",
+    "WebSocket"
+  ],
+  "author": "Korilakkuma <rilakkuma.san.xjapan@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "@types/websocket": "^1.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "dotenv-webpack": "^8.0.1",
+    "eslint": "^8.23.0",
+    "eslint-cli": "^1.1.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "4.3.8",
+    "lint-staged": "^13.0.3",
+    "terser-webpack-plugin": "^5.3.6",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.8.3",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
